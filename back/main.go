@@ -78,6 +78,8 @@ func main() {
 	r.POST("/register", register)
 
 	port := os.Getenv("Port")
-	if port == ""{port = "8080"}
+	if port == "" {
+		port = "3088"
+	}
 	r.Run(":" + port)
 }
