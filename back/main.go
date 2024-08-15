@@ -47,10 +47,10 @@ func createToken(username, email, role string) (string, error) {
 // Registration handler
 func register(c *gin.Context) {
 	var input struct {
-		Username string `json:"username" binding:"required"`
-		Email    string `json:"email" binding:"required"`
-		Password string `json:"password" binding:"required"`
-		Role     string `json:"role" binding:"required"`
+		Username string `json:"username" `
+		Email    string `json:"email" `
+		Password string `json:"password" `
+		Role     string `json:"role" `
 	}
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
